@@ -34,7 +34,6 @@ app.get('/apps', (req, res) => {
         );
     }
     results = results.filter(result => {
-      console.log(result.Genres);
       if (result.Genres.includes(genres)) {
         return result;
       }

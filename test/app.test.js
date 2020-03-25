@@ -2,7 +2,6 @@ const { expect } = require('chai');
 const supertest = require('supertest');
 const app = require('../app');
 
-
 describe('GET /apps endpoint', () => {
   it('sends back all apps by default', () => {
     return supertest(app)
@@ -24,11 +23,7 @@ describe('GET /apps endpoint', () => {
       .expect('Content-Type', /json/)
       .then(res => {
         expect(res.body).to.be.an('array');
-        expect(res.body.every(app =>
-          app.Genres.includes('Puzzle'))
-        ).to.be.true;
+        expect(res.body.every(app => app.Genres.includes('Puzzle'))).to.be.true;
       });
-
   });
 });
-
